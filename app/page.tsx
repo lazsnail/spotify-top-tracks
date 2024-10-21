@@ -120,7 +120,7 @@ function App() {
   };
 
   return (
-    <div className="flex flex-col gap-10 items-center min-h-screen m-8">
+    <div className="flex flex-col gap-10 items-center m-8">
       <h1 className="text-2xl font-bold">Spotify Top Tracks</h1>
       {!accessToken ? (
         <button onClick={loginWithSpotify} className='bg-green-500 hover:bg-green-600 transition px-3 py-2 font-semibold'>Log in with Spotify</button>
@@ -131,7 +131,7 @@ function App() {
           <button onClick={fetchTopTracks} className="bg-black text-white border-2 border-white px-3 py-2 hover:bg-white hover:text-black transition">Get My Top Tracks</button>
         }
           {topTracks.length > 0 && (
-              <div className="flex flex-wrap w-full justify-center gap-2">
+              <div className="flex flex-wrap w-full justify-center gap-4">
                 {topTracks.map(track => (
                   <a href={track.external_urls.spotify} target='_blank' key={track.id} className="text-center flex  flex-col w-[300px] outline outline-2 outline-white">
                     <Image alt={`${track.name} album cover`} src={track.album.images[1].url} width={300} height={300} />
